@@ -1,0 +1,52 @@
+﻿@using OptaTrack.Authentication;
+@{
+    ViewData["Title"] = "OptaTrack";
+}
+
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Owner</h2>
+        @if (User.IsOwner())
+        {
+            <div style="width:200px;height:200px;background-color:green;"></div>
+        }
+        else
+        {
+            <div style="width:200px;height:200px;background-color:red;"></div>
+        }
+    </div>
+    <div class="col-md-3">
+        <h2>Admin</h2>
+        @if (User.IsAdmin())
+        {
+            <div style="width:200px;height:200px;background-color:green;"></div>
+        }
+        else
+        {
+            <div style="width:200px;height:200px;background-color:red;"></div>
+        }
+    </div>
+    <div class="col-md-3">
+        <h2>User</h2>
+        @if (User.IsUser())
+        {
+            <div style="width:200px;height:200px;background-color:green;"></div>
+        }
+        else
+        {
+            <div style="width:200px;height:200px;background-color:red;"></div>
+        }
+    </div>
+    <div class="col-md-3">
+        <h2>Authenticated</h2>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div style="width:200px;height:200px;background-color:green;"></div>
+        }
+        else
+        {
+            <div style="width:200px;height:200px;background-color:red;"></div>
+        }
+    </div>
+</div>
